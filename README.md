@@ -8,6 +8,8 @@
 - [Routing](#routing)
 - [Forms](#forms)
 - [State Management](#state-management)
+- [Material Design](#material-design)
+- [Data Fetching](#data-fetching)
 
 #### Hooks
 
@@ -35,5 +37,16 @@
 
 - 📃 [State and Lifecycle](https://en.reactjs.org/docs/state-and-lifecycle.html)
 - 📃 [Redux](https://redux.js.org/)
+
+#### Material Design
+
+- 📃 [Material Design](https://material.io/design/)
+- 📃 [Material UI](https://material-ui.com/)
+
+### Data Fetching
+
+- 📃 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- 📃 [Axios](https://github.com/axios/axios)
+- 📃 [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 
 TBC 😉
