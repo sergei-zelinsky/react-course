@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Avatar,
-  ListSubheader,
-  Fab,
-  makeStyles,
-} from '@material-ui/core';
+import {List, ListSubheader, Fab, makeStyles} from '@material-ui/core';
 import {Add as AddIcon} from '@material-ui/icons';
 import StudentsList from '../common/StudentsList';
 import {Link} from 'react-router-dom';
@@ -30,26 +21,7 @@ export default () => {
     <>
       <List className={classes.list}>
         <ListSubheader>Students</ListSubheader>
-        <StudentsList>
-          {({students}) =>
-            students.map(student => (
-              <ListItem
-                key={student.id}
-                button
-                component={Link}
-                to={`/students/${student.id}`}
-              >
-                <ListItemAvatar>
-                  <Avatar src={student.avatar} />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={student.name}
-                  secondary={student.address}
-                />
-              </ListItem>
-            ))
-          }
-        </StudentsList>
+        <StudentsList>{({students}) => null}</StudentsList>
       </List>
       <Fab
         className={classes.fab}
