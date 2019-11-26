@@ -8,7 +8,10 @@ import {
 import Header from './Header';
 import StudentsListScreen from '../StudentsListScreen';
 import StudentScreen from '../StudentScreen';
-import {Switch, BrowserRouter, Route, Redirect} from 'react-router-dom';
+import TasksListScreen from '../TasksListScreen';
+import TaskScreen from '../TaskScreen';
+import MainScreen from '../MainScreen';
+import {Switch, BrowserRouter, Route} from 'react-router-dom';
 
 const theme = createMuiTheme({
   palette: {
@@ -32,7 +35,7 @@ const Root = () => {
           <Header />
           <div className={classes.content}>
             <Switch>
-              <Redirect path="/" exact to="/students" />
+              <Route path="/" exact component={MainScreen} />
               <Route path="/students" exact component={StudentsListScreen} />
               <Route path="/students/create" exact component={StudentScreen} />
               <Route
@@ -40,6 +43,9 @@ const Root = () => {
                 exact
                 component={StudentScreen}
               />
+              <Route path="/tasks" exact component={TasksListScreen} />
+              <Route path="/tasks/create" exact component={TaskScreen} />
+              <Route path="/tasks/:taskId" exact component={TaskScreen} />
             </Switch>
           </div>
         </BrowserRouter>
