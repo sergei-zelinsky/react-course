@@ -100,16 +100,18 @@ const StudentScreen = ({match, history}) => {
             >
               Submit
             </Button>
-            <Button
-              component={Link}
-              to={`/students/delete/${studentId}`}
-              fullWidth
-              color="secondary"
-              variant="outlined"
-              size="large"
-            >
-              Delete student
-            </Button>
+            {studentId && (
+              <Button
+                component={Link}
+                to={`/students/delete/${studentId}`}
+                fullWidth
+                color="secondary"
+                variant="outlined"
+                size="large"
+              >
+                Delete student
+              </Button>
+            )}
           </>
         )}
       </Form>
