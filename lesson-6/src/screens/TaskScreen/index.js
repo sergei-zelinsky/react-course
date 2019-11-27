@@ -129,16 +129,18 @@ const TaskScreen = ({match, history}) => {
             >
               Submit
             </Button>
-            <Button
-              component={Link}
-              to={`/tasks/delete/${taskId}`}
-              fullWidth
-              color="secondary"
-              variant="outlined"
-              size="large"
-            >
-              Delete task
-            </Button>
+            {taskId && (
+              <Button
+                component={Link}
+                to={`/tasks/delete/${taskId}`}
+                fullWidth
+                color="secondary"
+                variant="outlined"
+                size="large"
+              >
+                Delete task
+              </Button>
+            )}
           </>
         )}
       </Form>
