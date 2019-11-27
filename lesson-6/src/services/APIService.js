@@ -45,6 +45,28 @@ let students = [
   },
 ];
 
+let tasks = [
+  {
+    id: '9jwer209jg3f1968b8c98c8',
+    name: 'React TODO homework',
+    details:
+      'Write a simple todo app with edit, delete and filter functionality',
+    assigned: '',
+  },
+  {
+    id: 'web9j349ne9rbno93mafba3',
+    name: 'Advanced calculus homework',
+    details: 'Solve tasks №139, №140 from the book',
+    assigned: '',
+  },
+  {
+    id: '239j4blsdih2dsin3rvnsl2',
+    name: 'Physics lab №10',
+    details: 'Experiment with osciloscope simulator to get circle on screen',
+    assigned: '',
+  },
+];
+
 export const getAllStudents = () => {
   return students;
 };
@@ -82,7 +104,61 @@ export const deleteStudent = studentId => {
   if (studentIndex !== -1) {
     const [deletedStudent] = students.splice(studentIndex, 1);
 
+    const relatedTasks = tasks.filter(
+      task => task.assigned === deletedStudent.id
+    );
+
+    relatedTasks.forEach(task => {
+      updateTask(task.id, {
+        ...task,
+        assigned: '',
+      });
+    });
+
     return deletedStudent;
+  }
+
+  return null;
+};
+
+export const getAllTasks = () => {
+  return tasks;
+};
+
+export const getTask = taskId => {
+  const task = tasks.find(t => t.id === taskId);
+
+  return task;
+};
+
+export const addTask = task => {
+  const extendedTask = {
+    ...task,
+    id: uuid(),
+  };
+
+  tasks.push(extendedTask);
+
+  return extendedTask;
+};
+
+export const updateTask = (taskId, updatedTask) => {
+  const taskIndex = tasks.findIndex(t => t.id === taskId);
+
+  if (taskIndex !== -1) {
+    tasks[taskIndex] = updatedTask;
+  }
+
+  return updatedTask;
+};
+
+export const deleteTask = taskId => {
+  const taskIndex = tasks.findIndex(t => t.id === taskId);
+
+  if (taskIndex !== -1) {
+    const [deletedTask] = tasks.splice(taskIndex, 1);
+
+    return deletedTask;
   }
 
   return null;
