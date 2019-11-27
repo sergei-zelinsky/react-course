@@ -1,6 +1,5 @@
 import React from 'react';
-import {Typography, Container, Button, makeStyles} from '@material-ui/core';
-import * as APIService from '../../services/APIService';
+import {Container, makeStyles} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   buttonsContainer: {
@@ -14,42 +13,6 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function StudentDeleteScreen({history, match}) {
-  const studentId = match.params.studentId;
-
-  const handleDeleteButtonClick = () => {
-    APIService.deleteStudent(studentId);
-    history.push('/students');
-  };
-
-  const handleCancelButtonClick = () => {
-    history.goBack();
-  };
-
-  const classes = useStyles();
-
-  return (
-    <Container maxWidth="sm">
-      <Typography align="center">
-        Do you really want to delete this student?
-      </Typography>
-      <div className={classes.buttonsContainer}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={handleCancelButtonClick}
-        >
-          cancel
-        </Button>
-        <Button
-          variant="outlined"
-          color="secondary"
-          onClick={handleDeleteButtonClick}
-          className={classes.deleteButton}
-        >
-          delete
-        </Button>
-      </div>
-    </Container>
-  );
+export default function StudentDeleteScreen() {
+  return <Container maxWidth="sm"></Container>;
 }

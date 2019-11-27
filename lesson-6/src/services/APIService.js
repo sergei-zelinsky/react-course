@@ -104,17 +104,6 @@ export const deleteStudent = studentId => {
   if (studentIndex !== -1) {
     const [deletedStudent] = students.splice(studentIndex, 1);
 
-    const relatedTasks = tasks.filter(
-      task => task.assigned === deletedStudent.id
-    );
-
-    relatedTasks.forEach(task => {
-      updateTask(task.id, {
-        ...task,
-        assigned: '',
-      });
-    });
-
     return deletedStudent;
   }
 

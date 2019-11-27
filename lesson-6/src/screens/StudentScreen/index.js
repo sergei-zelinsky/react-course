@@ -7,7 +7,6 @@ import {
   TextField,
   makeStyles,
 } from '@material-ui/core';
-import {Link} from 'react-router-dom';
 import {Form, Field} from 'react-final-form';
 
 const useStyles = makeStyles(theme => ({
@@ -99,16 +98,6 @@ const StudentScreen = ({match, history}) => {
               className={classes.submitButton}
             >
               Submit
-            </Button>
-            <Button
-              component={Link}
-              to={`/students/delete/${studentId}`}
-              fullWidth
-              color="secondary"
-              variant="outlined"
-              size="large"
-            >
-              Delete student
             </Button>
           </>
         )}
