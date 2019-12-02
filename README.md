@@ -10,6 +10,7 @@
 - [State Management](#state-management)
 - [Material Design](#material-design)
 - [Data Fetching](#data-fetching)
+- [i18n](#i18n)
 
 #### Hooks
 
@@ -48,5 +49,11 @@
 - 📃 [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - 📃 [Axios](https://github.com/axios/axios)
 - 📃 [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+
+### i18n
+
+- 📃 [Intl](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl)
+- 📃 [React Intl](https://github.com/formatjs/react-intl)
+- 📃 [FormatJS](https://formatjs.io/)
 
 TBC 😉
