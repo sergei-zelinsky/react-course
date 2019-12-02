@@ -31,7 +31,8 @@ const NumbersList = connect((state, ownProps) => ({
 
 const NumbersManager = connect(null, {
   addRandomNumber: Actions.addRandomNumber,
-})(({addRandomNumber}) => {
+  addRandomNumberAsync: Actions.addRandomNumberAsync,
+})(({addRandomNumber, addRandomNumberAsync}) => {
   const [filter, setFilter] = useState('all');
 
   console.log('RENDER: NumbersManager');
@@ -63,6 +64,9 @@ const NumbersManager = connect(null, {
       <div>
         <button className="action-button" onClick={addRandomNumber}>
           Add random number
+        </button>
+        <button className="action-button" onClick={addRandomNumberAsync}>
+          Add random number (Async)
         </button>
       </div>
 

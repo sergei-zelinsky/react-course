@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import cx from 'classnames';
-import SelectorsSampleApp from './SelectorsSampleApp';
+import ReduxAdvancedApp from './ReduxAdvancedApp';
+import IntlSampleApp from './IntlSampleApp';
 import './app.css';
 
 const setLastUsedApp = app =>
@@ -13,7 +14,8 @@ const getLastUsedApp = () => {
 };
 
 const APPS = {
-  SELECTORS: 'Selectors',
+  REDUX_ADVANVED_APP: 'Redux Advanced',
+  INTL_APP: 'Intl',
 };
 
 const LAST_USED_APP_KEY = 'lastUsedApp';
@@ -63,7 +65,8 @@ export const App = () => {
         {!currentApp && (
           <h2 className="description">Select app from the list above {'⬆️'}</h2>
         )}
-        {isCurrentApp(APPS.SELECTORS) && <SelectorsSampleApp />}
+        {isCurrentApp(APPS.REDUX_ADVANVED_APP) && <ReduxAdvancedApp />}
+        {isCurrentApp(APPS.INTL_APP) && <IntlSampleApp />}
       </main>
     </div>
   );
